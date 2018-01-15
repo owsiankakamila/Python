@@ -1,0 +1,56 @@
+
+# define colours
+WHITE = (255,255,255)
+BLACK = (0,0,0)
+DARKGREY = (40,40,40)
+LIGHTGREY = (100,100,100)
+RED = (255,0,0)
+PINK = (255,0,255)
+GREEN = (0,255,0)
+BLUE = (0,0,255)
+YELLOW = (255, 255, 0)
+
+#game settings
+WIDTH = 456 # 19-
+HEIGHT = 552 # 23|
+FPS = 60
+TITLE = "PACMAN"
+HSCORE = 'highscore.txt'
+BGCOLOR = DARKGREY
+
+TILESIZE = 24
+GRIDWIDTH = WIDTH / TILESIZE
+GRIDHEIGHT = HEIGHT / TILESIZE
+
+PLAYER_SPEED = 2
+GHOST_SPEED = 2
+
+# map settings
+
+MAP1_COINS = 183
+MAP2_COINS = 188
+MAP3_COINS = 192
+MAP4_COINS = 185
+
+MAP1_TUNNEL = 240
+MAP2_TUNNEL = 384
+MAP3_TUNNEL = 336
+MAP4_TUNNEL = 240
+
+
+# images
+
+PLAYER_IMG = 'pacman.png'
+PLAYER2_IMG = 'pacman2.png'
+PLAYER3_IMG = 'pacman3.png'
+
+FRIGHTEND_IMG = 'fright.png'
+FRIGHTEND2_IMG = 'fright2.png'
+FRIGHTEND3_IMG = 'fright3.png'
+
+WALL0_IMG = 'block.png'
+WALL1_IMG = 'block1.png'
+WALL2_IMG = 'block2.png'
+WALL3_IMG = 'block3.png'
+COIN_IMG = 'coin.png'
+BLINKY_IMG = 'blinky.png'
