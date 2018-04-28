@@ -1,0 +1,11 @@
+a=input("Podaj liczbe: ")
+z=int(input("Z jakiego systemu: "))
+d=int(input("Do jakiego sytemu: "))
+
+#zamiana na system dziesietny
+r=len(a)
+for i in range(0,r):
+    dziesietny+=a[i]*z**(r-1-i)
+
+print(dziesietny)
+

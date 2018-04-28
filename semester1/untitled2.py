@@ -1,0 +1,3 @@
+import testczasu
+
+testczasu.test()

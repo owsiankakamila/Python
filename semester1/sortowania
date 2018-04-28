@@ -1,0 +1,68 @@
+''' RAPORT SORTOWANIE''' #Kamila Owsianka gr.1b wtorek 9:30
+
+import random
+
+'''TWORZENIE TABLICY'''
+def tworzeTablice (tab,rozmiar):
+    for i in range(0,rozmiar):
+        random.seed()
+        losowana = random.randrange(100)  #liczby od 1-100
+        tab.append(losowana)
+    print("tablica:      ", tab)
+    
+'''SELECTION SORT/ WYBIERANIE '''
+def selectionSort(tab):
+    tablica = tab [:]
+    pozycja=0
+    for i in range(0,len(tablica)): #wybrany element to tab i
+        najmniejszy=tablica[i]
+        pozycja=i
+        for j in range(i+1,len(tablica)):
+            if(najmniejszy>tablica[j]): #szuka mniejszego elemnetu po prawo od wybranego (i)
+                najmniejszy=tablica[j] #jesli mniejszy zapisywany do 'najmniejszy'
+                pozycja=j
+
+        tablica[i],tablica[pozycja]=tablica[pozycja],tablica[i] #zamiana miejscami wybranego z najmniejszym
+
+    print("selectionSort:", tablica)
+ 
+'''INSERTION SORT/ WYSTAWIANIE'''
+def insertionSort(tab):
+    tablica = tab [:]
+    for i in range(1,len(tablica)): # wybrana liczba to tab i
+        wybrana = tablica[i]
+        x=i          # x jest indeksem gdzie znajduje sie nasza wybrana liczba, wzgledem ktorej sortujemy              
+        for j in range(i-1,-1,-1):  # sprawdzaj na lewo od wybranej liczby, do -1 bo musi objac index 0
+            if(tablica[j] > wybrana):  
+                tablica[x],tablica[j]=tablica[j],tablica[x] #jeśli liczba po lewo większa to zamien kolejnoscią
+                x=x-1   #nasza wybrana liczba przesunela sie o jeden w lewo
+            else:
+                break # po lewo od wybranej są tylko mniejsze wiec nie ma sensu dalej sprawdzac
+    print("insertionSort:", tablica)
+
+'''BUBBLE SORT/ BABELKOWE'''
+def bubbleSort(tab): 
+    tablica=tab [:]
+    flag=True
+    for i in range(0,len(tablica) -1):
+        if flag==False: break #jesli przelecialo po calej tablicy i nic nie zamienilo to przerwij(sa posortowane)
+        flag=False
+        for j in range(0,len(tablica) -1 -i): # -i bo będzie już i największych uporządkowanych na końcu
+            if (tablica[j]>tablica[j+1]): #jesli wybrana liczba jest wieksza od tej po prawo to zamien miejscami = przesun w prawo
+                tablica[j],tablica[j+1]=tablica[j+1],tablica[j]
+                flag=True
+            
+    print("bubbleSort:   ", tablica) 
+     
+liczby=[]
+
+liczbyRozmiar =50
+
+tworzeTablice(liczby,liczbyRozmiar)
+
+selectionSort(liczby)
+
+insertionSort(liczby)
+
+bubbleSort(liczby)
+
